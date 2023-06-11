@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You n Me</title>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .heading {
+      text-align: center;
+      font-size: 35px;
+      font-family: Candara, Oswald;
+      margin-top: 50px;
+    }
+
+    .pic {
+      display: block;
+      margin: 0 auto;
+      width: 25%;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      margin-top: 30px;
+    }
+
+    #bocchi1 {
+      display: block;
+      margin: 0 auto;
+      margin-top: 50px;
+      font-size: 20px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #bocchi2 {
+      position: absolute;
+      left: 45%;
+      top: 511px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 50px;
+      font-size: 20px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #ff5722;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #dialog {
+      width: 300px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+
+    .pic1 {
+      display: block;
+      margin: 0 auto;
+      width: 210px;
+      height: 250px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      margin-top: 30px;
+    }
+
+    .right {
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+      font-size: 16px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #ff5722;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      .heading {
+        font-size: 29px;
+      }
+
+      .pic {
+        width: 75%;
+      }
+
+      #bocchi1 {
+        margin-top: 30px;
+      }
+
+      #bocchi2 {
+        left: 35%;
+        top: 521px;
+      }
+
+      .pic1 {
+        margin-left: 11vw;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const button2 = document.getElementById("bocchi2");
+      button2.addEventListener("mouseover", function () {
+        this.style.left = Math.floor(Math.random() * 100) + "%";
+        this.style.top = Math.floor(Math.random() * 300) + 200 + "px";
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1 class="heading">Can we hang out soon?</h1>
+  <img
+    class="pic"
+    src="https://media.tenor.com/zGm5acSjHCIAAAAM/cat-begging.gif"
+    alt="Cute cat begging"
+  />
+  <button id="bocchi1" onclick="openModal()">YES BBY!</button>
+  <button tabindex="-1" id="bocchi2">NO</button>
+  <dialog id="dialog">
+    <img
+      class="pic1"
+      src="pic.jpg"
+      width="210px"
+      height="250px"
+      alt="Thank you image"
+    />
+    <br />
+    <h2 style="text-align: center">YAYY THANK U! LOVE U</h2>
+    <button onclick="closeModal()" class="right">Close</button>
+  </dialog>
+  <script>
+    var dialog = document.getElementById("dialog");
+
+    function openModal() {
+      dialog.showModal();
+    }
+
+    function closeModal() {
+      dialog.close();
+    }
+  </script>
+</body>
+</html>
